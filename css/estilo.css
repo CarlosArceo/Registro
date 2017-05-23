@@ -1,0 +1,126 @@
+body{
+
+}
+.logo{
+	max-width: 100%;
+	position: relative;
+	top: -45px;
+	left: -35px;
+	display:block!important;
+	-webkit-transition:-webkit-transform 0.5s ease-out;
+	-moz-transition:-moz-transform 0.5s ease-out;
+	-o-transition:-o-transform 0.5s ease-out;
+	-ms-transition:-ms-transform 0.5s ease-out;
+	transition:transform 0.5s ease-out;
+}
+.logo:hover{
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1)
+}
+/*
+* Estilos barra de navegación}
+*/
+.navbar-default{
+	background: #94376E !important;
+	padding: 50px;
+}
+.navbar-collapse a{
+	color: white !important;
+	font-family:'Raleway', sans-serif;
+	font-weight: 100;
+	font-size: 30px;
+	opacity: 0.5;
+}
+.navbar{
+	margin-bottom: 0;
+}
+.navbar-collapse a:hover{
+	color: white !important;
+	opacity: 1;
+}
+.dropdown-menu{
+	background: #94376E;
+}
+.dropdown-menu>li>a:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: black;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #555;
+    background-color: #000000;
+}
+/*
+* Estilos barra de navegación}
+*/
+.titulo{
+	font-family:'Raleway', sans-serif;
+	color: black;
+	font-size: 84px;
+}
+.contenido_principal{
+	background-image: url(../img/fondo_razones.jpg);	
+}
+.razones{
+	width: 70%;
+	font-family:'Raleway', sans-serif;
+	font-size: 40px;
+}
+.retraso{
+	animation-delay:0.5s;
+	-webkit-animation-delay:0.5s; /* Safari y Chrome */
+}
+.retraso1{
+	animation-delay:1s;
+	-webkit-animation-delay:1s; /* Safari y Chrome */
+}
+.intro{
+	font-family:'Raleway', sans-serif;
+	color: black;
+
+}
+.titulo_licenciatura{
+	font-size: 70px;
+}
+.parrafo{
+	font-size: 40px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.formulario{
+	padding: 20px 20px;
+	border: black 3px;
+	border-style: double;
+}
+.nota{
+	text-align: justify;
+	font-size: 12px;
+}
+.regresar{
+	top: 160px;
+	left: 5px;
+	position: fixed;
+	background: transparent;
+	color: black;
+	padding: 10px 10px;
+}
+.caja{
+	font-family:'Raleway', sans-serif;
+	padding-top: 150px;
+	padding-left: 50px;
+	text-align: center;
+}
+.caja a{
+	color: black;
+	font-size: 50px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+}
+.caja a:hover{
+	font-size: 40px;
+}
