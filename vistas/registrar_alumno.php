@@ -35,26 +35,26 @@
 			
 		 ?>
 		 <!-- DIV FORMULARIO -->
-		 <div class="container" id="divRegistro" name="">
-		 	<form action="../funciones/guardar_personas.php" method="POST" class="form-horizontal" id="formulario1">
+		 <div class="container-fluid animated bounceInLeft" id="divRegistro" name="">
+		 	<form action="../funciones/guardar_personas.php" method="POST" class="form-inline" id="formulario1">
 		 		<div class="form-group">
-		 			<label>Nombre(s)</label>
+		 			<label>Nombre(s):</label>
 		 			<input type="text" name="nombreAlumno" class="form-control" placeholder="Carlos Alberto" required="" autofocus="" tabindex="1">
 		 		</div>
 		 		<div class="form-group">
-		 			<label>Apellido(S)</label>
+		 			<label>Apellido(S):</label>
 		 			<input type="text" name="apellidoAlumno" class="form-control" placeholder="Arceo Moo" required="" tabindex="2">
 		 		</div>
 		 		<div class="form-group">
-		 			<label>Correo Electronico</label>
+		 			<label>Correo Electronico:</label>
 		 			<input type="email" name="correoAlumno" class="form-control" placeholder="carlos.arceo@ejemplo.com" required="" tabindex="3">
 		 		</div>
 		 		<div class="form-group">
-		 			<label>Número de Telefono</label>
+		 			<label>Número de Telefono:</label>
 		 			<input type="text" name="telefonoAlumno" class="form-control" placeholder="(999)9452553" required="" tabindex="4">
 		 		</div>
 		 		<div class="form-group">
-		 			<label>Evento</label>
+		 			<label>Evento:</label>
 		 			<select name="evento" id="evento" class="form-control" tabindex="5" required="">
 		 				<option>Seleccionar</option>
 		 				<?php 

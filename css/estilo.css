@@ -124,3 +124,11 @@ body{
 .caja a:hover{
 	font-size: 40px;
 }
+
+label{
+	font-family: 'Raleway', sans-serif;
+}
+#divRegistro{
+	margin-top: 15px;
+	margin: 32px;
+}
