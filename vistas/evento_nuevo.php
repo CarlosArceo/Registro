@@ -9,24 +9,9 @@
 	<link href="../alertas/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:100,600">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/animate.css">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 </head>
-<style type="text/css">
-	
-	label{
-		font-family: 'Raleway', sans-serif;
-	}
-	.titulo-panel{
-		font-family: 'Fjalla One', sans-serif;
-		font-size: 25px;
-	}
-	.panel-footer label{
-		font-style: italic;
-	}
-</style>
 <body>
 	<header>
 		<?php include '../dis/encabezado.php'; ?>
@@ -34,8 +19,8 @@
 	<!-- Contenido Principal -->
 
 	<!--Panel Nuevo Evento -->
-	<div class="panel panel-default" >
-		<div class="panel-heading"><h4 class="titulo-panel">Nuevo Evento</h4></div>
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4 class="">Nuevo Evento</h4></div>
 			<div class="panel-body">
 				<form method="POST" action="../funciones/guardar_evento.php" id="frEventoNuevo" name="frEventoNuevo">
 					<div class="form-group col-lg-6 col-lg-offset-3">
