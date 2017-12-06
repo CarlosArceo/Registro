@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="bootstrap-material-design.css">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<title>Inicio de sesión</title>
+	<style type="text/css">
+		/* Sticky footer styles
+		-------------------------------------------------- */
+		html {
+	  		position: relative;
+	  		min-height: 100%;
+		}
+		body {
+	  	/* Margin bottom by footer height */
+	  		margin-bottom: 60px;
+		}
+		img#logo{
+			width: 100%;
+			height: 100%;
+		}
+		#titulo{
+			font-family: 'Roboto Slab', serif;
+		}
+
+		[class^='bmd-label'], [class*=' bmd-label'] {
+    		color: rgb(0, 0, 0);
+		}
+		.boton {
+    		text-align: center;
+   			margin-top: 44px;
+   			z-index: 1000;
+		}
+		.footer {
+			position: absolute;
+    		bottom: 0;
+    		width: 100%;
+    		height: 63px;
+    		line-height: 60px;
+    		background-color: rgba(0, 0, 0, 0.87);
+		}
+		@media (max-width: 576px) {
+			.footer{
+				font-size: small;
+				height: 20%;
+			}
+		}
+		/* Medium devices (tablets, 768px and up)*/
+		@media (max-width: 768px) {
+			.footer{
+				font-size: small;
+				height: auto;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<header>
+		<img src="red.png" id="logo" class="img-fluid">
+	</header>
+	<div class="container-fluid">
+		<div id="titulo" >
+			<h2 class="text-center">Control de Acceso</h2>
+		</div>
+		<div class="container">
+			<form>
+				<div class="form-group">
+    				<label for="usuario" class="bmd-label-floating">Usuario IGSI:</label>
+    				<input type="text" class="form-control" id="usuario" required="">
+  				</div>
+  				<div class="form-group">
+  					<label for="matricula" class="bmd-label-floating">Matricula:</label>
+  					<input type="text" class="form-control" id="matricula" name="" required="">
+  				</div>
+  				<div class="boton">
+  					<input type="submit" name="enviar" value="Navegar" class="btn btn-raised btn-success btn-lg">
+  				</div>
+
+			</form>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container-fluid" style="text-align: center;">
+			<span class="text-muted">© Departamento de Tecnología y Sistemas de la US Campus Mérida, García Ginerés 2017l</span>
+		</div>
+	</footer>
+
+</body>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="popper.min.js"></script>
+	<script type="text/javascript" src="bootstrap-material-design.js"></script>
+	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+</html>

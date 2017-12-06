@@ -18,13 +18,22 @@
 
 
 		if($clsRegistro->validarCorreo($infoPersona->correo)){
+			echo "<input type='text'  id='resultadoLic' value='1'> ";
+		}
+
+		else{
 			$insertar = $clsRegistro->guardarDatos($infoPersona,$lstLicenciatua);
-		}else{
-			$insertar = $clsRegistro->guardarDatos($infoPersona,$lstLicenciatua);
+
+			if ($insertar) {
+				echo "<input type='text' id='resultadoLic' value='2'> ";
+			}
+			else{
+				echo "<input type='text' id='resultadoLic' value='3'> ";
+			}
 		}
 
 	}else{
-		echo "Nada";
+		
 	}
 
 

@@ -5,12 +5,25 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Sweet Alert Styles -->
+	<link href="../alertas/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:100,600">
     <link rel="stylesheet" type="text/css" href="../css/animate.css">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 	<title>Registrar</title>
 </head>
+	<style type="text/css">
+		.form-inline .form-group {
+		    margin-bottom: 15px;		   
+		}
+		.form-inline .form-control {
+		    width: 100%;
+		}
+		option {
+		    font-family: -webkit-body;
+		}
+	</style>
 	<body>
 		<header>
 			<?php include '../dis/encabezado.php'; ?>
@@ -35,28 +48,28 @@
 			
 		 ?>
 		 <!-- DIV FORMULARIO -->
-		 <div class="container-fluid animated bounceInLeft" id="divRegistro" name="">
+		 <div class="container-fluid" id="divRegistro" name="">
 		 	<form action="../funciones/guardar_personas.php" method="POST" class="form-inline" id="formulario1">
 		 		<div class="form-group">
-		 			<label>Nombre(s):</label>
+		 			<label>Nombre(s)</label>
 		 			<input type="text" name="nombreAlumno" class="form-control" placeholder="Carlos Alberto" required="" autofocus="" tabindex="1">
 		 		</div>
 		 		<div class="form-group">
-		 			<label>Apellido(S):</label>
+		 			<label>Apellido(S)</label>
 		 			<input type="text" name="apellidoAlumno" class="form-control" placeholder="Arceo Moo" required="" tabindex="2">
 		 		</div>
 		 		<div class="form-group">
-		 			<label>Correo Electronico:</label>
+		 			<label>Correo Electronico</label>
 		 			<input type="email" name="correoAlumno" class="form-control" placeholder="carlos.arceo@ejemplo.com" required="" tabindex="3">
 		 		</div>
 		 		<div class="form-group">
-		 			<label>Número de Telefono:</label>
+		 			<label>Número de Telefono</label>
 		 			<input type="text" name="telefonoAlumno" class="form-control" placeholder="(999)9452553" required="" tabindex="4">
 		 		</div>
 		 		<div class="form-group">
-		 			<label>Evento:</label>
+		 			<label>Evento</label>
 		 			<select name="evento" id="evento" class="form-control" tabindex="5" required="">
-		 				<option>Seleccionar</option>
+		 				<option value="">Seleccionar</option>
 		 				<?php 
 		 					foreach ($lstEvento as $lstEventos) {
 		 						echo "<option value='$lstEventos->idEvento'>$lstEventos->nombreEvento </option>";
@@ -91,11 +104,12 @@
 		 			 		<div class="panel-footer"></div>
 		 			 </div>
 		 		</div>
-		 		<div class="form-group">
+		 		<div class="blo">
 		 			<button type="submit" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar Datos</button>
 		 		</div>
 		 	</form>
 		 </div>
+		 <div id="resultado"></div>
 	</body>
 	<script src="../jquery/jquery.js"></script>
 	<script src="../bootstrap/js/bootstrap.js"></script>
@@ -122,22 +136,33 @@
 				debugger;
 				var seleccinados = $("input[name='lstLicenciatura[]']:checked").length;
 				if (seleccinados > 0){
-					//Enviamos los vales por Ajax.
-					// 	$.ajax({
-					// 	type: 'POST',
-					// 	url: $(this).attr('action'),
-					// 	data: $(this).serialize(),
+					// Enviamos los vales por Ajax.
+						$.ajax({
+						type: 'POST',
+						url: $(this).attr('action'),
+						data: $(this).serialize(),
 
-					// 	//Success
-					// 	success: function(data){
-					// 		$("#resultado").html(data);
-					// 	},
-					// 	//Error
-					// 	error:function(requestObject, error, errorThrown){
-					// 		alert("Lo sentimos algo salío mal intente más tarde")
-					// 	}
-					// })
-					//return false;
+						//Success
+						success: function(data){
+							$("#resultado").html(data);
+							if ($("#resultadoLic").val() == 2) {
+								$('#formulario1').each(function(){this.reset();	});
+								swal("Guardado Correctamente", "Has click en botón para cerrar", "success")
+							}
+							else if($("#resultadoLic").val() == 1){
+								swal("Advertencia", "El correo ya esta registrado", "warning");
+							}
+							else if($("#resultadoLic").val() == 3){
+								swal("Cancelled", "Lo sentimos algo salío mal intentar más tarde", "error");
+							}
+												
+						},
+						//Error
+						error:function(requestObject, error, errorThrown){
+							alert("Lo sentimos algo salío mal intente más tarde")
+						}
+					})
+					return false;
 				}
 				else{
 					$("#warning").show();
@@ -148,4 +173,8 @@
 			
 		});
 	</script>
+	<!-- Sweet Alert Script -->
+	<script src="../alertas/sweetalert.min.js"></script>
+	
+	
 </html>
